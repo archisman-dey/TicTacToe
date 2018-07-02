@@ -41,7 +41,7 @@ class MainWindow (QMainWindow):
 				grid.addWidget(self.labels[i][j], i, j)
 
 	def setupLabel(self):
-		label = ClickableQLabel()
+		label = ClickableQLabel(parent = self.centralWidget())
 
 		#Alpha = 255 means no transparency
 		backgroundColor = QColor(255, 213, 179, 255) #RGBA values
