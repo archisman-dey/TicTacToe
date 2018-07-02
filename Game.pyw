@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 
 import sys
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
+from PyQt5.QtWidgets import QApplication
 from UI import MainWindow
 
 class Game(object):
@@ -31,7 +29,7 @@ class Game(object):
 
 		self.app.exec_()
 
-	def update(self, i, j):
+	def update(self, i, j):	#this is used as a slot
 		#updates the matrix and the UI on click and also updates the
 		#labels when the game is won
 		if self.matrix[i][j] == "empty":
