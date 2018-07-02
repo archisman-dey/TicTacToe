@@ -6,7 +6,6 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from UI import MainWindow
 
-#this may also be written procedurally 
 class Game(object):
 	def __init__(self):
 		
@@ -53,7 +52,7 @@ class Game(object):
 
 	def checkWinner(self):
 		#returns False if game is not won and a tuple 
-		#(True, the three labels to be greenified and the type of label)
+		#(True, the three labels to be greenified , the type of label)
 		#checking rows and columns:
 		for i in (0,1,2):
 			if self.matrix[i][0] == self.matrix[i][1] == self.matrix[i][2] != "empty":
@@ -65,7 +64,8 @@ class Game(object):
 				return (True, (0,0), (1,1), (2,2), self.matrix[1][1])
 		elif self.matrix[0][2] == self.matrix[1][1] == self.matrix[2][0] != "empty":
 				return (True, (0,2), (1,1), (2,0), self.matrix[1][1])
-
+		
+		#these should be more readable
 		return False
 
 Game()
