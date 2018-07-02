@@ -1,4 +1,4 @@
-#tries to implement a custom clickable QLabel
+#implement a clickable QLabel used for showing the circle and crosses as a QPixelMap
 
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
