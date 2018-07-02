@@ -1,7 +1,5 @@
 #implements functions to control the UI of the game
 
-import sys
-import PyQt5.QtCore
 from PyQt5.QtGui import QPixmap, QIcon, QColor
 from PyQt5.QtWidgets import QMainWindow, QWidget, QGridLayout
 from ClickableQLabel import ClickableQLabel
