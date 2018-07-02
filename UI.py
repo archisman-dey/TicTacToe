@@ -1,3 +1,5 @@
+#implements functions to control the UI of the game
+
 import sys
 import time
 from PyQt5.QtCore import *
@@ -22,7 +24,7 @@ class MainWindow (QMainWindow):
 		self.show()
 
 	def setupUI(self):
-		self.setFixedSize(300, 300)		#revise later for using on HiDPI
+		self.setFixedSize(300, 300)		#revise later for using on other screen resolutions
 		self.setWindowTitle("TicTacToe")
 		self.setWindowIcon(QIcon('window_icon.png'))
 
