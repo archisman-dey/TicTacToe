@@ -10,10 +10,10 @@ class MainWindow (QMainWindow):
 		super().__init__(parent)	#this line initialises QMainWindow
 
 		#pixmaps to be used later
-		self.cross = self.crossPixmap()
-		self.circle = self.circlePixmap()
-		self.crossGreen = self.crossPixmapGreen()
-		self.circleGreen = self.circlePixmapGreen()
+		self.cross = self.generatePix("Red-Cross.png")
+		self.circle = self.generatePix("red-circle.png")
+		self.crossGreen = self.generatePix("Red-Cross-Green.png")
+		self.circleGreen = self.generatePix("red-circle-green.png")
 
 		self.labels = [[], [], []] #this will store the 9 labels
 		
@@ -21,7 +21,7 @@ class MainWindow (QMainWindow):
 		self.show()
 
 	def setupUI(self):
-		self.setFixedSize(300, 300)		#revise later for using on other screen resolutions
+		self.setFixedSize(300, 300)		#change for using on other screen resolutions
 		self.setWindowTitle("TicTacToe")
 		self.setWindowIcon(QIcon('window_icon.png'))
 
@@ -55,18 +55,6 @@ class MainWindow (QMainWindow):
 		pix.load(filename)
 		pix = pix.scaled(90, 90)
 		return pix
-
-	def crossPixmap (self):
-		return self.generatePix("Red-Cross.png")
-
-	def circlePixmap (self):
-		return self.generatePix("red-circle.png")
-
-	def crossPixmapGreen (self):
-		return self.generatePix("Red-Cross-Green.png")
-
-	def circlePixmapGreen (self):
-		return self.generatePix("red-circle-green.png")
 
 	def updateLabel (self, x, y, type):
 		if type == "cross" :
