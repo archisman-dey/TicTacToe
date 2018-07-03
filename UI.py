@@ -4,6 +4,9 @@ from PyQt5.QtGui import QPixmap, QIcon, QColor
 from PyQt5.QtWidgets import QMainWindow, QWidget, QGridLayout
 from ClickableQLabel import ClickableQLabel
 
+winSize = 300	#change this to suit your screen resolution
+labelSize = (int)(winSize*3/10)
+
 class MainWindow (QMainWindow):
 
 	def __init__ (self, parent = None):
@@ -21,7 +24,7 @@ class MainWindow (QMainWindow):
 		self.show()
 
 	def setupUI(self):
-		self.setFixedSize(300, 300)		#change for using on other screen resolutions
+		self.setFixedSize(winSize, winSize)
 		self.setWindowTitle("TicTacToe")
 		self.setWindowIcon(QIcon('window_icon.png'))
 
@@ -43,17 +46,17 @@ class MainWindow (QMainWindow):
 		#Alpha = 255 means no transparency
 		backgroundColor = QColor(255, 213, 179, 255) #RGBA values
 
-		pix = QPixmap(90, 90)
+		pix = QPixmap(labelSize, labelSize)
 		pix.fill(backgroundColor)
 
 		label.setPixmap(pix)
 		return label
 
 	def generatePix (self, filename):
-		#loads a 90*90 pixmap from filename
+		#loads a labelSized pixmap from filename
 		pix = QPixmap()
 		pix.load(filename)
-		pix = pix.scaled(90, 90)
+		pix = pix.scaled(labelSize, labelSize)
 		return pix
 
 	def updateLabel (self, x, y, type):
