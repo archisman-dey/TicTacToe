@@ -4,7 +4,6 @@ import sys
 from PyQt5.QtWidgets import QApplication
 from UI import MainWindow
 
-#this may also be written procedurally 
 class Game(object):
 	def __init__(self):
 		
@@ -30,7 +29,7 @@ class Game(object):
 
 		self.app.exec_()
 
-	def update(self, i, j):
+	def update(self, i, j):	#this is used as a slot
 		#updates the matrix and the UI on click and also updates the
 		#labels when the game is won
 		if self.matrix[i][j] == "empty":
@@ -63,7 +62,8 @@ class Game(object):
 				return (True, (0,0), (1,1), (2,2), self.matrix[1][1])
 		elif self.matrix[0][2] == self.matrix[1][1] == self.matrix[2][0] != "empty":
 				return (True, (0,2), (1,1), (2,0), self.matrix[1][1])
-
+		
+		#these should be more readable
 		return False
 
 Game()

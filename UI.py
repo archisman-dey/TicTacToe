@@ -1,10 +1,10 @@
-#implements functions used for controlling the UI
+#implements functions to control the UI of the game
 
 from PyQt5.QtGui import QPixmap, QIcon, QColor
 from PyQt5.QtWidgets import QMainWindow, QWidget, QGridLayout
 from ClickableQLabel import ClickableQLabel
 
-winSize = 299	#change this to suit your screen resolution
+winSize = 300	#change this to suit your screen resolution
 labelSize = (int)(winSize*3/10)
 
 class MainWindow (QMainWindow):
@@ -24,7 +24,7 @@ class MainWindow (QMainWindow):
 		self.show()
 
 	def setupUI(self):
-		self.setFixedSize(winSize, winSize)		#revise later for using on HiDPI
+		self.setFixedSize(winSize, winSize)
 		self.setWindowTitle("TicTacToe")
 		self.setWindowIcon(QIcon('window_icon.png'))
 
@@ -53,7 +53,7 @@ class MainWindow (QMainWindow):
 		return label
 
 	def generatePix (self, filename):
-		#loads a labelSize pixmap from filename
+		#loads a labelSized pixmap from filename
 		pix = QPixmap()
 		pix.load(filename)
 		pix = pix.scaled(labelSize, labelSize)
